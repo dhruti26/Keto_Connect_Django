@@ -10,7 +10,7 @@
         <link rel="stylesheet" href="">
     </head>
     <body>
-        <form>
+        {% comment %} <form>
             <label for="fname">Current Age:</label>
             <input type="text" id="age" name="age"><br>
             <label for="lname">Height:</label>
@@ -44,9 +44,12 @@
             <label for="lname">Hemoglobin:</label>
             <input type="text" id="hemoglobin" name="hemoglobin"><br>
             <input type="submit" value="Submit">
-          </form>
-
-
-        <script src="" async defer></script>
+          </form> {% endcomment %}
+         
+        <form action="" method="POST" novalidate>
+            {% csrf_token %}
+            {{form.as_p}}
+            <input type="submit" value="Submit">
+        </form>  
     </body>
 </html>
