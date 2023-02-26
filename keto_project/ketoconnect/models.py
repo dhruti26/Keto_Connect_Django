@@ -47,7 +47,7 @@ class Keto_Age(models.Model):
     diastolic_bp = models.IntegerField() 
     oxygen_level = models.IntegerField() 
     hemoglobin = models.FloatField()
-
+    keto_age_value = models.IntegerField()
 #Food_Details
 class Food_Detail(models.Model):
     Food_category = models.CharField(max_length=15)
