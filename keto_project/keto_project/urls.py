@@ -18,5 +18,6 @@ from django.urls import path,include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('ketoage/',include('ketoconnect.urls'))
+    path('ketoage/',include('ketoconnect.urls')),
+    path('user/',include('ketoconnect.urls'))
 ]
