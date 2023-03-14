@@ -9,47 +9,253 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="">
     </head>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+		.btn { display: inline-block; *display: inline; *zoom: 1; padding: 4px 10px 4px; margin-bottom: 0; font-size: 13px; line-height: 18px; color: #333333; text-align: center;text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75); vertical-align: middle; background-color: #f5f5f5; background-image: -moz-linear-gradient(top, #ffffff, #e6e6e6); background-image: -ms-linear-gradient(top, #ffffff, #e6e6e6); background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#e6e6e6)); background-image: -webkit-linear-gradient(top, #ffffff, #e6e6e6); background-image: -o-linear-gradient(top, #ffffff, #e6e6e6); background-image: linear-gradient(top, #ffffff, #e6e6e6); background-repeat: repeat-x; filter: progid:dximagetransform.microsoft.gradient(startColorstr=#ffffff, endColorstr=#e6e6e6, GradientType=0); border-color: #e6e6e6 #e6e6e6 #e6e6e6; border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25); border: 1px solid #e6e6e6; -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px; -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05); -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05); box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05); cursor: pointer; *margin-left: .3em; }
+.btn:hover, .btn:active, .btn.active, .btn.disabled, .btn[disabled] { background-color: #e6e6e6; }
+.btn-large { padding: 9px 14px; font-size: 15px; line-height: normal; -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; }
+.btn:hover { color: #333333; text-decoration: none; background-color: #e6e6e6; background-position: 0 -15px; -webkit-transition: background-position 0.1s linear; -moz-transition: background-position 0.1s linear; -ms-transition: background-position 0.1s linear; -o-transition: background-position 0.1s linear; transition: background-position 0.1s linear; }
+.btn-primary, .btn-primary:hover { text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25); color: #ffffff; }
+.btn-primary.active { color: rgba(255, 255, 255, 0.75); }
+.btn-primary { background-color: #e23617; background-image: -moz-linear-gradient(top, #d95d1a, #e55613); background-image: -ms-linear-gradient(top, #ba502d, #e2a41d); background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ec5809), to(#e97a11)); background-image: -webkit-linear-gradient(top, #ef690a, #ff6200); background-image: -o-linear-gradient(top, #ed7513, #e77e0f); background-image: linear-gradient(top, #cb6424, #ec810e); background-repeat: repeat-x; filter: progid:dximagetransform.microsoft.gradient(startColorstr=#be4d2e, endColorstr=#f14907, GradientType=0);  border: 1px solid #c18043; text-shadow: 1px 1px 1px rgba(0,0,0,0.4); box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(175, 108, 108, 0.5); }
+.btn-primary:hover, .btn-primary:active, .btn-primary.active, .btn-primary.disabled, .btn-primary[disabled] { filter: none; background-color: #db6e1b; }
+.btn-block { width: 100%; display:block; }
+        	*{
+	  margin: 0;
+	  padding: 0;
+	  box-sizing: border-box;
+	  font-family: 'Poppins',sans-serif;
+	}
+	body{
+	  height: 100vh;
+	  display: flex;
+	  justify-content: center;
+	  align-items: center;
+	  padding: 10px;
+	  /* background: linear-gradient(135deg, #d5c140, #be883d); */
+      background-image: url('https://www.castironketo.net/wp-content/uploads/2021/11/Keto-Macro-Calculator.png');
+	}
+
+	.container{
+	  max-width: 700px;
+	  width: 100%;
+	  background-color:rgba(221, 217, 213, 0.51);;
+	  padding: 25px 30px;
+	  border-radius: 5px;
+	  box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+	}
+    .container .title{
+	  font-size: 25px;
+	  font-weight: 500;
+	  position: relative;
+	}
+	.container .title::before{
+	  content: "";
+	  position: absolute;
+	  left: 0;
+	  bottom: 0;
+	  height: 3px;
+	  width: 250px;
+	  border-radius: 5px;
+	  background: linear-gradient(135deg, #989257, hsl(43, 8%, 17%));
+	}
+    .content form .user-details{
+	  display: flex;
+	  flex-wrap: wrap;
+	  justify-content: space-between;
+	  margin: 20px 0 12px 0;
+	}
+    form .user-details .input-box{
+	  margin-bottom: 15px;
+	  width: calc(100% / 3 - 20px);
+	}
+	form .input-box span.details{
+	  display: block;
+	  font-weight: 500;
+	  margin-bottom: 5px;
+	}
+	.user-details .input-box input{
+	  height: 45px;
+	  width: 100%;
+	  outline: none;
+	  font-size: 13px;
+	  border-radius: 5px;
+	  padding-left: 7px;
+	  border: 1px solid #ccc;
+	  border-bottom-width: 2px;
+	  transition: all 0.3s ease;
+	}
+	.user-details .input-box input:focus,
+	.user-details .input-box input:valid{
+	  border-color: #9b59b6;
+	}
+	 form .gender-details .gender-title{
+	  font-size: 20px;
+	  font-weight: 500;
+	 }
+	 form .category{
+	   display: flex;
+	   width: 80%;
+	   margin: 14px 0 ;
+	   justify-content: space-between;
+	 }
+	 form .category label{
+	   display: flex;
+	   align-items: center;
+	   cursor: pointer;
+	 }
+	 form .category label .dot{
+	  height: 18px;
+	  width: 18px;
+	  border-radius: 50%;
+	  margin-right: 10px;
+	  background: #d9d9d9;
+	  border: 5px solid transparent;
+	  transition: all 0.3s ease;
+	}
+	 #dot-1:checked ~ .category label .one,
+	 #dot-2:checked ~ .category label .two,
+	 #dot-3:checked ~ .category label .three{
+	   background: #9b59b6;
+	   border-color: #d9d9d9;
+	 }
+	 form input[type="radio"]{
+	   display: none;
+	 }
+	 form .button{
+	   height: 40px;
+	   margin: 25px 0
+	 }
+	 form .button input{
+	   height: 45px;
+	   width: 400px;
+	   border-radius: 5px;
+	   border: none;
+	   color: #fff;
+	   font-size: 18px;
+	   font-weight: 500;
+	   letter-spacing: 1px;
+	   cursor: pointer;
+	   transition: all 0.3s ease;
+	   background: linear-gradient(135deg, #71b7e6, #9b59b6);
+	 }
+	 
+	 form .button input:hover{
+	  /* transform: scale(0.99); */
+	  background: linear-gradient(-135deg, #71b7e6, #9b59b6);
+	  }
+	 @media(max-width: 584px){
+	 .container{
+	  max-width: 100%;
+	}
+	form .user-details .input-box{
+		margin-bottom: 15px;
+		width: 100%;
+	  }
+	  form .category{
+		width: 100%;
+	  }
+	  .content form .user-details{
+		max-height: 300px;
+		overflow-y: scroll;
+	  }
+	  .user-details::-webkit-scrollbar{
+		width: 5px;
+	  }
+	  }
+	  @media(max-width: 459px){
+	  .container .content .category{
+		flex-direction: column;
+	  }
+	}
+    label{
+        font-style: italic;
+        font-weight: bolder;
+        font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-size: large;
+    }
+    </style>
     <body>
-        {% comment %} <form>
-            <label for="fname">Current Age:</label>
-            <input type="text" id="age" name="age"><br>
-            <label for="lname">Height:</label>
-            <input type="text" id="height" name="height"><br>
-            <label for="lname">Weight:</label>
-            <input type="text" id="weight" name="weight"><br>
-            <label for="lname">experience_ketodiet:</label>
-            <input type="text" id="kdiet" name="kdiet"><br>
-            <label for="lname">Number of meals:</label>
-            <input type="text" id="meals" name="meals"><br>
-            <label for="lname">Number of Snacks:</label>
-            <input type="text" id="snacks" name="snacks"><br>
-            <label for="lname">Intermittent Fasting:</label>
-            <input type="text" id="fast" name="fast"><br>
-            <label for="lname">Number of steps:</label>
-            <input type="text" id="steps" name="steps"><br>
-            <label for="lname">Exercise Days:</label>
-            <input type="text" id="exdays" name="exdays"><br>
-            <label for="lname">Is Smoker ?</label>
-            <input type="text" id="smoker" name="smoker"><br>
-            <label for="lname">Number of sleep hours:</label>
-            <input type="text" id="sleep" name="sleep"><br>
-            <label for="lname">Waist to height ratio:</label>
-            <input type="text" id="height" name="height"><br>
-            <label for="lname">Systolic BP:</label>
-            <input type="text" id="sbp" name="sbp"><br>
-            <label for="lname">Diastolic BP:</label>
-            <input type="text" id="dbp" name="dbp"><br>
-            <label for="lname">Oxygen Level:</label>
-            <input type="text" id="oxy" name="oxy"><br>
-            <label for="lname">Hemoglobin:</label>
-            <input type="text" id="hemoglobin" name="hemoglobin"><br>
-            <input type="submit" value="Submit">
-          </form> {% endcomment %}
-         
-        <form action="" method="POST" novalidate>
-            {% csrf_token %}
-            {{form.as_p}}
-            <input type="submit" value="Submit">
-        </form>  
+        <div class="container">
+            <div class="title">ENTER YOUR INFORMATION HERE....</div>
+            <div class="content">
+            <form method = "POST" action = "">
+                {% csrf_token %}
+                <div class="user-details">
+                    <div class="input-box">
+                        <label for="userid">User_Id</label>
+                        <input type="text" id="uid" name="uid"><br>    
+                    </div>
+                   <div class="input-box">
+                        <label for="fname">Current Age:</label>
+                        <input type="text" id="age" name="age" min="18"><br>
+                   </div>
+                    <div class="input-box">
+                        <label for="lname">Height(in cm):</label>
+                        <input type="number" id="height" name="height"><br>
+                    </div>
+                   <div class="input-box">
+                        <label for="lname">Weight(in kg):</label>
+                        <input type="number" id="weight" name="weight"><br>
+                   </div>
+                    <div class="input-box">
+                        <label for="lname">Experience_ketodiet:</label>
+                        <input type="number" id="kdiet" name="kdiet"><br>
+                    </div>
+                    <div class="input-box">
+                        <label for="lname">Number of Meals:</label>
+                        <input type="number" id="meals" name="meals" min="0" max=""2><br>
+                    </div>
+                    <div class="input-box">
+                        <label for="lname">Number of Snacks:</label>
+                        <input type="number" id="snacks" name="snacks"  min="0" max="2"><br>
+                    </div>
+                    <div class="input-box">
+                        <label for="lname">Intermittent Fasting:</label>
+                        <input type="checkbox" name="itfast" id="" value = "True"><br>
+                    </div>
+                    <div class="input-box">
+                        <label for="lname">Number of Steps:</label>
+                        <input type="number" id="steps" name="steps"><br>
+                    </div>
+                    <div class="input-box">
+                        <label for="lname">Exercise Days(out of 7):</label>
+                        <input type="number" id="exdays" name="exdays" max="7"><br>
+                    </div>
+                    <div class="input-box">
+                        <label for="lname">Is Smoker ?</label>
+                        <input type="checkbox" name="smoke" id="" value = "True"><br>
+                    </div>
+                    <div class="input-box">
+                        <label for="lname">Number of Sleep Hours:</label>
+                        <input type="number" id="sleep" name="sleep" max = "24"><br>
+                    </div>
+                    <div class="input-box">
+                        <label for="lname">Waist to Height Ratio:</label>
+                        <input type="number" id="height" name="heightwaist"><br>
+                    </div>
+                    <div class="input-box">
+                        <label for="lname">Systolic BP(in mmHg):</label>
+                        <input type="number" id="sbp" name="sbp" max="120" min="65"><br>
+                    </div>
+                    <div class="input-box">
+                        <label for="lname">Diastolic BP(in mmHg):</label>
+                        <input type="number" id="dbp" name="dbp" max="120" min="65"><br>
+                    </div>
+                    <div class="input-box">
+                        <label for="lname">Oxygen Level:</label>
+                        <input type="number" id="oxy" name="oxy"><br>
+                    </div>
+                    <div class="input-box">
+                        <label for="lname">Hemoglobin:</label>
+                        <input type="number" id="hemoglobin" name="hemoglobin" min="7" max="15"><br>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block btn-large">PREDICT</button>
+                    <br>        
+                </div>
+          </form>
+         </div> 
+        </div>
     </body>
 </html>

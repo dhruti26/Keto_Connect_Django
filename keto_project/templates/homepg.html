@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="{%static 'css/homepg.css'%}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/js/all.min.js"></script>
+    <title>KETO CONNECT</title>
+    <style>
+        .heading{
+    display: flex;
+}
+
+#login_signup{
+    margin-left: 900px;
+    margin-top: 25px;
+}
+
+#navbar{
+    display: flex;
+}
+
+#flexview{
+    display: flex;
+}
+
+#rightalign
+{
+    margin-left: 20px;
+}
+
+#but0
+{
+    margin-left: 30px;
+}
+#but1
+{
+    margin-left: 15px;
+}
+
+#but2
+{
+    margin-left: 15px;
+}
+
+#but3
+{
+    margin-left: 15px;
+}
+
+#but4
+{
+    margin-left: 15px;
+}
+
+.navbar{
+    display: flex;
+    flex-direction: row;
+}
+    </style>
+</head>
+<body>
+        <div class = "heading"><h1>&nbsp;&nbsp;Keto Connect</h1>
+            <div id = "login_signup"> 
+                <!-- <button><a href="login.html">Login</a></button> -->
+                <button><a href="{% url 'User' %}">Register here</a></button>
+            </div>
+        </div> 
+        <br>
+        <div class = "navbar">
+            <div class="dropdown" id="but0">
+                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Get Started
+                <span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                  <li><a href="#">What is Keto?</a></li>
+                  <li><a href="#">Tips for Keto</a></li>
+                  <li><a href="#">Keto FAQs</a></li>
+                </ul>
+            </div>
+            <div class="dropdown" id="but1">
+                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Articles
+                <span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                  <li><a href="{% url 'articlenutrition' %}">Nutrition</a></li>
+                  <li><a href="{% url 'articlelifestyle' %}">Lifestyle</a></li>
+                  <li><a href="{% url 'articletherauptic' %}">Therauptics</a></li>
+                </ul>
+            </div>
+            <div class="dropdown" id="but2">
+                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Recipes
+                <span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                    <div id = "flexview">
+                        <div id="rightalign">
+                            <li><a href="{% url 'breakfast' %}">Breakfast</a></li>
+                            <li><a href="{% url 'lunch' %}">Lunch</a></li>
+                            
+                        </div>
+                        <p></p>
+                        <div id="rightalign">
+                            <li><a href="{% url 'snacks' %}">Snacks</a></li>
+                            <li><a href="{% url 'dinner' %}">Dinner</a></li>
+                        </div>
+                    </div>
+                </ul>
+            </div>
+            <div class="dropdown" id="but3">
+                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Tools
+                <span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                  <li><a href="{% url 'KetoAge' %}">Keto Age</a></li>
+                  <li><a href="{% url 'KCalc' %}">Keto Calculator</a></li>
+                  <li><a href="{% url 'Mealplanner' %}">Meal Planner</a></li>
+                </ul>
+            </div>
+        </div>
+        <hr>
+        <div id="but0">
+            <h3 style="margin-left:530px"><u>ARTICLES</u></h3>
+             <!--Floating used here-->
+            <textarea name="" id="" cols="37" rows="10">
+            </textarea>
+            <textarea name="" id="" cols="37" rows="10">
+            </textarea>
+            <textarea name="" id="" cols="37" rows="10">
+            </textarea>
+        </div>
+        <hr>
+        <div id="but0">
+            <h3 style="margin-left:530px"><u>RECIPES</u></h3>
+            <!--Floating cards used here-->
+            <textarea name="" id="" cols="37" rows="10">
+            </textarea>
+            <textarea name="" id="" cols="37" rows="10">
+            </textarea>
+            <textarea name="" id="" cols="37" rows="10">
+            </textarea>
+            <textarea name="" id="" cols="37" rows="10">
+            </textarea>
+        </div>
+        <hr>
+        <div id="but0">
+            <h3 style="margin-left:545px"><u>TOOLS</u></h3>
+            <textarea name="" id="" cols="37" rows="10">
+
+
+                Keto Age. 
+                Yet to be changed
+            </textarea>
+            <textarea name="" id="" cols="37" rows="10">
+
+
+                Keto Calculator
+                Yet to be changed
+            </textarea>
+            <textarea name="" id="" cols="37" rows="10">
+
+
+                Meal Planner
+                Yet to be changed
+            </textarea>
+        </div>
+        <hr>
+        <!-- <div id="but0">
+            <h3 style="margin-left:530px"><u>SHOPS</u></h3>
+            <textarea name="" id="" cols="87" rows="10">Accessories
+            </textarea>
+            <textarea name="" id="" cols="87" rows="10">EBooks
+            </textarea>
+        </div> 
+        <hr> -->
+        <footer><h4 style="margin-left: 555px;">FOOTER</h4></footer>
+</body>
+</html>

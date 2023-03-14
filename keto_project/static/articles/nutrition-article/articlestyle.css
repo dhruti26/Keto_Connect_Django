@@ -1,0 +1,216 @@
+body {
+  margin: 6;
+  /* background-image: url('https://images.unsplash.com/photo-1490818387583-1baba5e638af?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1932&q=80');
+  background-repeat: no-repeat;
+  background-size: cover; */
+  background : linear-gradient(rgb(228, 215, 215),rgb(222, 203, 151)
+  )
+}
+body {
+    margin: 12;
+    padding-top: 1.5%;
+ }
+  
+  img {
+    width: 100%; }
+  
+  .full-bleed-1 {
+    background-image: url(art1.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh; }
+    
+  .caption {
+    font-style: italic; }
+    .caption p {
+      margin: 0; }
+  
+  .caption-1 {
+    text-align: right;
+    padding-right: 1rem;
+    margin: 1rem 0; }
+  
+  .article-1,
+  .article-2 {
+    padding: 1rem 3rem; }
+    .article-1 p,
+    .article-2 p {
+      columns: 3;
+      column-width: 300px; }
+  
+  @media (min-width: 600px) {
+    .image-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      grid-template-rows: auto;
+      grid-gap: 1rem;
+      margin-top: 1.5rem;
+      margin: 1.5rem; } }
+  
+  .image-2 {
+    background-image: url(art2.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 300px;
+    grid-row: 1 / span 3;
+    grid-column: 1 / span 7; }
+  
+  @media (min-width: 600px) {
+    .image-2 {
+      height: 660px; } }
+  
+  .image-3 {
+    background-image: url(art3.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 300px;
+    grid-row: 1;
+    grid-column: 8 / span 5; }
+  
+  .image-4 {
+    background-image: url(art4.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 300px;
+    grid-row: 3;
+    grid-column: 8 / span 5; }
+  
+  .image-2,
+  .image-3,
+  .image-4 {
+    margin: 1rem; }
+
+    
+    .image-5 {
+        background-image: url(art5.jpg);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 300px;
+        grid-row: 1 / span 3;
+        grid-column: 1 / span 7; }
+      
+      @media (min-width: 600px) {
+        .image-5 {
+          height: 660px; } }
+      
+      .image-6 {
+        background-image: url(art6.jpg);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 300px;
+        grid-row: 1;
+        grid-column: 8 / span 5; }
+      
+      .image-7 {
+        background-image: url(art7.png);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 300px;
+        grid-row: 3;
+        grid-column: 8 / span 5; }
+
+        .image-5,
+        .image-6,
+        .image-7 {
+          margin: 1rem; }
+          @media (min-width: 600px) {
+            .image-5,
+            .image-6,
+            .image-7 {
+              margin: 0; } }
+          
+  @media (min-width: 600px) {
+    .image-2,
+    .image-3,
+    .image-4 {
+      margin: 0; } }
+  
+  .caption-2 {
+    grid-row: 4;
+    grid-column: 1 / span 7; }
+  
+  .caption-3 {
+    grid-row: 2;
+    grid-column: 8 / span 5; }
+  
+  .caption-4 {
+    grid-row: 4;
+    grid-column: 8 / span 5; }
+  
+  .caption-2,
+  .caption-3,
+  .caption-4 {
+    margin-left: 1rem; }
+  
+  @media (min-width: 600px) {
+    .caption-2,
+    .caption-3,
+    .caption-4 {
+      margin-left: 0; } }
+  
+  .article-2 {
+    margin-bottom: 2rem; }
+    .article-2 p {
+      columns: 2;
+      column-width: 250px; }
+  
+  @media (min-width: 600px) {
+    .article-2 {
+      margin-left: 25%; } }
+  
+  .caption {
+    font-style: italic; }
+    .caption p {
+      margin: 0; }
+  
+  .caption-8 {
+    text-align: right;
+    padding-right: 1rem;
+    margin: 1rem 0; }
+
+    .full-bleed-2 {
+        background-image: url(art8.png);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 100vh; }
+
+
+    .caption {
+    font-style: italic; }
+    .caption p {
+      margin: 0; }
+  
+  .caption-9 {
+    text-align: right;
+    padding-right: 1rem;
+    margin: 1rem 0; }
+
+    .full-bleed-3 {
+        background-image: url(art9.png);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 100vh; }    
+
+        
+ .abc{
+   font-size: medium;
+   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+   color: rgb(41, 32, 26);
+ }
+ 
+ #abcdef{
+   font-size: 60px;
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   font-style: italic;
+   text-decoration-style: dotted;
+   color: rgb(227, 115, 74);
+ }
