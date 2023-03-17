@@ -52,6 +52,7 @@ class Keto_Age(models.Model):
 class Food_Detail(models.Model):
     Food_category = models.CharField(max_length=15)
     Food_Brand = models.CharField(max_length=15)
+    Food_Item = models.CharField(max_length=15)
 
 #Address_Details
 class Address(models.Model):

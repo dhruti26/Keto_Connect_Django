@@ -7,12 +7,9 @@ from ketoconnect.models import Food_Detail
 from ketoconnect.models import Address
 from ketoconnect.models import KetoCalculator
 
-
-
 @admin.register(User_detail)
 class StudentAdmin(admin.ModelAdmin):
     list_display=('user_id','user_name','password','email','dateofbirth','gender','phone_number')
-
 
 @admin.register(Order_Detail)
 class OrderAdmin(admin.ModelAdmin):
@@ -29,7 +26,7 @@ class Keto_Age_Admin(admin.ModelAdmin):
 
 @admin.register(Food_Detail)
 class FoodAdmin(admin.ModelAdmin):
-    list_display=('Food_category','Food_Brand') 
+    list_display=('Food_category','Food_Brand','Food_Item') 
 
 @admin.register(Address)
 class AddressAdmin(admin.ModelAdmin):
