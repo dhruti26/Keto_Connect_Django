@@ -4,7 +4,6 @@ from ketoconnect import views
 from django.conf import settings
 
 urlpatterns = [
-    path('/Login/',views.login,name = 'login'),
     path('/User/',views.User,name = 'User'),
     path('/keto-age/',views.KetoAge,name = 'KetoAge'),
     path('/keto-calculator/',views.KCalc,name = 'KCalc'),
@@ -17,5 +16,7 @@ urlpatterns = [
     path('breakfast/',views.breakfast,name='breakfast'),
     path('lunch/',views.lunch,name='lunch'),
     path('snacks/',views.snacks,name='snacks'),
-    path('dinner/',views.dinner,name='dinner')
+    path('dinner/',views.dinner,name='dinner'),
+    path('accessories/',views.accessories,name='accessories'),
+    path('ebooks/',views.ebooks,name='ebooks')
 ]

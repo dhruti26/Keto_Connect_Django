@@ -22,16 +22,11 @@ def User(request):
       phone = request.POST['phnum']
       user=User_detail(user_id = userid,user_name=username,password=pas,email=ema,dateofbirth=date,gender=gen,phone_number=phone)
       user.save()
-      return render(request,'homepg.html',{})
+      return render(request,'index.html',{})
    else:
       user = User_detail()
-      return render(request,'index.html') 
+      return render(request,'index1.html') 
 
-def login(request):
-   if request.method == 'POST':
-         return render(request,'homepg.html')
-   else:
-      return render(request,'homepg.html')
 
 def KetoAge(request):
    if request.method == 'POST':
@@ -122,7 +117,7 @@ def FoodFinder(request):
 
 
 def HomePage(request):
-   return render(request,'homepg.html')
+   return render(request,'index.html')
 
 
 def articlelifestyle(request):
@@ -145,3 +140,18 @@ def snacks(request):
 
 def dinner(request):
    return render(request,'recipe/dinner/dinner.html')
+
+
+def accessories(request):
+   return render(request,'Shop/accesories/accesories.html')
+
+
+def ebooks(request):
+   return render(request,'Shop/ebooks/ebooks.html')
+
+
+# def about(request):
+#     return render(request,'about.html')
+
+# def index(request):
+#    return render(request,'index.html')
