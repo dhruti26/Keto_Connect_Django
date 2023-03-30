@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meal Planner</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/js/all.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css">
+  </head>
+  <style>
+    *{
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+h1{
+  font-size: 2.5rem;
+  font-family: 'Montserrat';
+  font-weight: normal;
+  color: #d42929;
+  text-align: center;
+  margin: 2.0rem 0 0.6rem;
+}
+
+body{
+  background-image: url('https://images.unsplash.com/photo-1505935428862-770b6f24f629?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=867&q=80');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.wrapper{
+  width: 90%;
+  margin: 0 auto;
+  max-width: 80rem;
+  background-color: rgb(245, 163, 56);
+}
+
+.cols{
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+    background-color: #C6D4DF
+}
+
+.col{
+  width: calc(25% - 2rem);
+  margin: 1rem;
+  cursor: pointer;
+}
+
+.container{
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+	-webkit-perspective: 1000px;
+	        perspective: 1000px;
+          background-image: url('https://images.unsplash.com/photo-1621919472462-6db865a003e4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=464&q=80');
+}
+
+.front,
+.back{
+  background-size: cover;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.25);
+  border-radius: 10px;
+	background-position: center;
+	-webkit-transition: -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+	transition: -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+	-o-transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+	transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+	transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1), -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+	-webkit-backface-visibility: hidden;
+	        backface-visibility: hidden;
+	text-align: center;
+	min-height: 280px;
+	height: auto;
+	border-radius: 10px;
+	color: #fff;
+	font-size: 1.5rem;
+}
+
+.back{
+  background: #cedce7;
+  background: -webkit-linear-gradient(45deg,  #6e6812c6 0%,#1d1a0de2 100%);
+  background: -o-linear-gradient(45deg,  #6e6812c6 0%,#937f31e2 100%);
+  background: linear-gradient(45deg, #6e6812c6 0%,#937f31e2 100%);
+}
+
+.front:after{
+	position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    content: '';
+    display: block;
+    opacity: .6;
+    background-color: #000;
+    -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+    border-radius: 10px;
+}
+.container:hover .front,
+.container:hover .back{
+    -webkit-transition: -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+    transition: -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+    -o-transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+    transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+    transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1), -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+}
+
+.back{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.inner{
+    -webkit-transform: translateY(-50%) translateZ(60px) scale(0.94);
+            transform: translateY(-50%) translateZ(60px) scale(0.94);
+    top: 50%;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    padding: 2rem;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    outline: 1px solid transparent;
+    -webkit-perspective: inherit;
+            perspective: inherit;
+    z-index: 2;
+}
+
+.container .back{
+    -webkit-transform: rotateY(180deg);
+            transform: rotateY(180deg);
+    -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+}
+
+.container .front{
+    -webkit-transform: rotateY(0deg);
+            transform: rotateY(0deg);
+    -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+}
+
+.container:hover .back{
+  -webkit-transform: rotateY(0deg);
+          transform: rotateY(0deg);
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+}
+
+.container:hover .front{
+  -webkit-transform: rotateY(-180deg);
+          transform: rotateY(-180deg);
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+}
+
+.front .inner p{
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.front .inner p:after{
+  content: '';
+  width: 4rem;
+  height: 2px;
+  position: absolute;
+  background: #C6D4DF;
+  display: block;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  bottom: -.75rem;
+}
+
+.front .inner span{
+  color: rgba(255,255,255,0.7);
+  font-family: 'Montserrat';
+  font-weight: 300;
+}
+
+@media screen and (max-width: 64rem){
+  .col{
+    width: calc(33.333333% - 2rem);
+  }
+}
+
+@media screen and (max-width: 48rem){
+  .col{
+    width: calc(50% - 2rem);
+  }
+}
+
+@media screen and (max-width: 32rem){
+  .col{
+    width: 100%;
+    margin: 0 0 2rem 0;
+  }
+}
+.abc{
+  color: rgb(8, 4, 1);
+}
+
+#mno{
+  color: #33101051;
+}
+  </style>
+<body>
+  <div class="wrapper">
+    <h1><b><i class="fa-solid fa-calendar" id="mno"></i>&nbsp;Your Weekly Meal Plan&nbsp;<i class="fa-regular fa-clock" id="mno"></i></b></h1>
+    <div class="cols">
+        <div class="col" ontouchstart="this.classList.toggle('hover');">
+          <div class="container">
+            <div class="front">
+              <div class="inner">
+                <p>Monday</p>
+                <span>A really healthy from outside starts from inside</span>
+              </div>
+            </div>
+            <div class="back">
+              <div class="inner">
+                <p class = "abc"><i class="fa-solid fa-mug-saucer"></i>&nbsp;Breakfast</p>
+                <p>Keto Egg Muffins</p>
+                <p class = "abc"><i class="fa-solid fa-pizza-slice"></i>&nbsp;Lunch</p>
+                <p>Lettuce Wraps</p>
+                <p class = "abc"><i class="fa-solid fa-utensils"></i>&nbsp;Dinner</p>
+                <p>Italian Meatballs</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col" ontouchstart="this.classList.toggle('hover');">
+          <div class="container">
+            <div class="front">
+              <div class="inner">
+                <p>Tuesday</p>
+                <span>It's not just diet,it's long term lifestyle change</span>
+              </div>
+            </div>
+            <div class="back">
+              <div class="inner">
+                <p class = "abc"><i class="fa-solid fa-mug-saucer"></i>&nbsp;Breakfast</p>
+                <p>Keto Egg Muffins</p>
+                <p class = "abc"><i class="fa-solid fa-pizza-slice"></i>&nbsp;Lunch</p>
+                <p>Chicken Burger</p>
+                <p class = "abc"><i class="fa-solid fa-utensils"></i>&nbsp;Dinner</p>
+                <p>Stuffed Zuchini</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col" ontouchstart="this.classList.toggle('hover');">
+          <div class="container">
+            <div class="front">
+              <div class="inner">
+                <p>Wednesday</p>
+                <span>Train your body to crave for healthy food.</span>
+              </div>
+            </div>
+            <div class="back">
+              <div class="inner">
+                <p class = "abc"><i class="fa-solid fa-mug-saucer"></i>&nbsp;Breakfast</p>
+                <p>Keto Scramble</p>
+                <p class = "abc"><i class="fa-solid fa-pizza-slice"></i>&nbsp;Lunch</p>
+                <p>Broccoli</p>
+                <p class = "abc"><i class="fa-solid fa-utensils"></i>&nbsp;Dinner</p>
+                <p>Seafood Chowder</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col" ontouchstart="this.classList.toggle('hover');">
+          <div class="container">
+            <div class="front">
+              <div class="inner">
+                <p>Thursday</p>
+                <span>You don't have to eat less,you have to eat right</span>
+              </div>
+            </div>
+            <div class="back">
+              <div class="inner">
+                <p class = "abc"><i class="fa-solid fa-mug-saucer"></i>&nbsp;Breakfast</p>
+                <p>Keto Scramble</p>
+                <p class = "abc"><i class="fa-solid fa-pizza-slice"></i>&nbsp;Lunch</p>
+                <p>Keto Egg Muffins</p>
+                <p class = "abc"><i class="fa-solid fa-utensils"></i>&nbsp;Dinner</p>
+                <p>Italian Meatballs</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col" ontouchstart="this.classList.toggle('hover');">
+          <div class="container">
+            <div class="front">
+              <div class="inner">
+                <p>Friday</p>
+                <span>Slow prgress is better than no progress</span>
+              </div>
+            </div>
+            <div class="back">
+              <div class="inner">
+                <p class = "abc"><i class="fa-solid fa-mug-saucer"></i>&nbsp;Breakfast</p>
+                <p>Keto Egg Muffins</p>
+                <p class = "abc"><i class="fa-solid fa-pizza-slice"></i>&nbsp;Lunch</p>
+                <p>Lettuce Wraps</p>
+                <p class = "abc"><i class="fa-solid fa-utensils"></i>&nbsp;Dinner</p>
+                <p>Italian Meatballs</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col" ontouchstart="this.classList.toggle('hover');">
+          <div class="container">
+            <div class="front">
+              <div class="inner">
+                <p>Saturday</p>
+                <span>Calories don't count on the weekend</span>
+              </div>
+            </div>
+            <div class="back">
+              <div class="inner">
+                <p class = "abc"><i class="fa-solid fa-mug-saucer"></i>&nbsp;Breakfast</p>
+                <p>Keto Egg Muffins</p>
+                <p class = "abc"><i class="fa-solid fa-pizza-slice"></i>&nbsp;Lunch</p>
+                <p>Chicken Burger</p>
+                <p class = "abc"><i class="fa-solid fa-utensils"></i>&nbsp;Dinner</p>
+                <p>Stuffed Zuchini</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+   </div>
+</body>
+</html>

@@ -69,4 +69,7 @@ class KetoCalculator(models.Model):
     protein_consumed_each_day=models.IntegerField()
     choose_a_goal=models.CharField(max_length=50)
 
+class Login(models.Model):
+    user_id = models.ForeignKey(User_detail,on_delete=models.CASCADE,primary_key=True,related_name = 'useroflogin')
+    password = models.ForeignKey(User_detail,on_delete = models.CASCADE,related_name='passwordoflogin')
 
